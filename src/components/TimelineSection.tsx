@@ -24,7 +24,7 @@ export default function TimelineSection() {
   const timelineData: TimelineItem[] = [
     {
       year: "2025",
-      title: "Associate Software Engineer",
+      title: "Email Marketing",
       subtitle: "Dotnix Technology",
       type: "experience",
       description: "Designed responsive HTML/CSS email marketing templates and optimized delivery settings for ISPs to ensure inbox rates.",
