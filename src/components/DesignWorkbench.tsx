@@ -39,7 +39,7 @@ export default function DesignWorkbench() {
     <div className="w-full rounded-2xl glass-premium border border-slate-800 hover:border-[#22C55E]/15 overflow-hidden shadow-[0_15px_40px_-15px_rgba(0,0,0,0.8)] flex flex-col h-[480px]">
       
       {/* Workbench Header Toolbar */}
-      <div className="px-5 py-4 bg-slate-950/90 border-b border-slate-900 flex flex-wrap items-center justify-between gap-3 select-none">
+      <div className="px-5 py-4 bg-slate-950/90 border-b border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-3 select-none">
         <div className="flex items-center gap-2">
           <div className="flex gap-1.5">
             <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
@@ -52,12 +52,12 @@ export default function DesignWorkbench() {
         </div>
         
         {/* Navigation Tabs */}
-        <div className="flex gap-1 bg-slate-900/60 p-1 rounded-lg border border-slate-800">
+        <div className="flex flex-wrap gap-1 bg-slate-900/60 p-1 rounded-lg border border-slate-800 w-full sm:w-auto">
           {(["design-system", "user-flow", "prototype"] as Tab[]).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`cursor-pointer px-3 py-1.5 rounded-md text-[10px] font-sans font-bold uppercase tracking-wider transition-all duration-200 flex items-center gap-1.5 ${
+              className={`cursor-pointer px-2.5 py-1.5 sm:px-3 rounded-md text-[9px] sm:text-[10px] font-sans font-bold uppercase tracking-wider transition-all duration-200 flex items-center gap-1.5 flex-1 sm:flex-none justify-center ${
                 activeTab === tab
                   ? "bg-[#22C55E] text-[#0F172A] shadow-[0_2px_8px_rgba(34,197,94,0.3)]"
                   : "text-slate-400 hover:text-white"
@@ -73,7 +73,7 @@ export default function DesignWorkbench() {
       </div>
 
       {/* Main Sandbox Canvas */}
-      <div className="flex-1 p-6 relative bg-slate-950/30 overflow-hidden flex flex-col justify-between">
+      <div className="flex-1 p-4 sm:p-6 relative bg-slate-950/30 overflow-hidden flex flex-col justify-between">
         
         {/* Decorative Grid Line Behind Content */}
         <div className="absolute inset-0 grid-pattern opacity-10 pointer-events-none" />
@@ -87,40 +87,40 @@ export default function DesignWorkbench() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="space-y-6 flex-1 flex flex-col justify-between z-10"
+              className="space-y-4 sm:space-y-6 flex-1 flex flex-col justify-between z-10"
             >
-              <div className="space-y-2">
+              <div className="space-y-1 sm:space-y-2">
                 <h4 className="text-xs font-mono text-[#22C55E] uppercase tracking-wider flex items-center gap-1.5">
                   <Palette size={12} /> Design System Tokens
                 </h4>
-                <p className="text-[11px] text-slate-400 font-sans">
+                <p className="text-[10px] sm:text-[11px] text-slate-400 font-sans">
                   Interactive typography and HEX colors mapping that drives the design-to-code alignment.
                 </p>
               </div>
 
               {/* Color Tokens Palette */}
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                 {colors.map((color) => (
                   <div
                     key={color.hex}
                     onClick={() => handleCopyColor(color.hex)}
-                    className="group cursor-pointer p-3 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 transition-all duration-200 flex items-center justify-between"
+                    className="group cursor-pointer p-2.5 sm:p-3 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 transition-all duration-200 flex items-center justify-between"
                   >
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-2 sm:gap-3">
                       <div 
-                        className="w-8 h-8 rounded-lg border border-slate-800 transition-transform duration-200 group-hover:scale-105"
+                        className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg border border-slate-800 transition-transform duration-200 group-hover:scale-105"
                         style={{ backgroundColor: color.hex }}
                       />
                       <div>
-                        <p className="text-[11px] font-bold text-white font-sans">{color.name}</p>
-                        <p className="text-[9px] font-mono text-slate-400">{color.hex}</p>
+                        <p className="text-[10px] sm:text-[11px] font-bold text-white font-sans">{color.name}</p>
+                        <p className="text-[8px] sm:text-[9px] font-mono text-slate-400">{color.hex}</p>
                       </div>
                     </div>
                     <div className="text-slate-500 group-hover:text-slate-300">
                       {copiedColor === color.hex ? (
-                        <Check size={12} className="text-[#22C55E]" />
+                        <Check size={11} className="text-[#22C55E]" />
                       ) : (
-                        <Copy size={12} />
+                        <Copy size={11} />
                       )}
                     </div>
                   </div>
@@ -128,23 +128,23 @@ export default function DesignWorkbench() {
               </div>
 
               {/* Typography Specs */}
-              <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/80 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-slate-950/80 border border-slate-800 flex items-center justify-center text-slate-400">
-                    <Type size={18} />
+              <div className="p-3 sm:p-4 rounded-xl bg-slate-900/40 border border-slate-800/80 flex items-center justify-between gap-3">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-slate-950/80 border border-slate-800 flex items-center justify-center text-slate-400 shrink-0">
+                    <Type size={16} />
                   </div>
                   <div>
-                    <h5 className="text-xs font-bold text-white font-sans">Typography Pairings</h5>
-                    <p className="text-[10px] text-slate-400 font-mono mt-0.5">
-                      Archivo (Headings) / Space Grotesk (Body)
+                    <h5 className="text-[11px] sm:text-xs font-bold text-white font-sans">Typography Pairings</h5>
+                    <p className="text-[8px] sm:text-[10px] text-slate-400 font-mono mt-0.5">
+                      Archivo / Space Grotesk
                     </p>
                   </div>
                 </div>
-                <div className="flex gap-1.5">
-                  <span className="px-2 py-0.5 rounded bg-slate-950 border border-slate-800 text-[8px] font-mono text-slate-400 uppercase">
+                <div className="flex gap-1.5 shrink-0">
+                  <span className="px-1.5 py-0.5 rounded bg-slate-950 border border-slate-800 text-[8px] font-mono text-slate-400 uppercase">
                     300-900
                   </span>
-                  <span className="px-2 py-0.5 rounded bg-[#22C55E]/10 border border-[#22C55E]/20 text-[8px] font-mono text-[#22C55E] uppercase font-bold">
+                  <span className="px-1.5 py-0.5 rounded bg-[#22C55E]/10 border border-[#22C55E]/20 text-[8px] font-mono text-[#22C55E] uppercase font-bold">
                     Systematic
                   </span>
                 </div>
@@ -159,78 +159,104 @@ export default function DesignWorkbench() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="space-y-6 flex-1 flex flex-col justify-between z-10"
+              className="space-y-4 sm:space-y-6 flex-1 flex flex-col justify-between z-10"
             >
-              <div className="space-y-2">
+              <div className="space-y-1 sm:space-y-2">
                 <h4 className="text-xs font-mono text-[#22C55E] uppercase tracking-wider flex items-center gap-1.5">
                   <GitMerge size={12} /> UX Architecture Flow
                 </h4>
-                <p className="text-[11px] text-slate-400 font-sans">
+                <p className="text-[10px] sm:text-[11px] text-slate-400 font-sans">
                   The sequence of design thinking milestones from early problem analysis to validated usability releases.
                 </p>
               </div>
 
               {/* Dynamic Flow Map */}
-              <div className="relative py-4">
+              <div className="relative py-2">
                 
-                {/* SVG Connecting Flow Lines */}
-                <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ minHeight: "80px" }}>
-                  <path
-                    d="M 60,35 Q 165,35 165,35"
-                    fill="none"
-                    stroke="#1E293B"
-                    strokeWidth="2"
-                    strokeDasharray="4 4"
-                  />
-                  <path
-                    d="M 60,35 Q 165,35 165,35"
-                    fill="none"
-                    stroke="#22C55E"
-                    strokeWidth="2"
-                    strokeDasharray="6 24"
-                    className="animate-[dash_1.5s_linear_infinite]"
-                  />
-                  <path
-                    d="M 235,35 Q 345,35 345,35"
-                    fill="none"
-                    stroke="#1E293B"
-                    strokeWidth="2"
-                    strokeDasharray="4 4"
-                  />
-                  <path
-                    d="M 235,35 Q 345,35 345,35"
-                    fill="none"
-                    stroke="#0EA5E9"
-                    strokeWidth="2"
-                    strokeDasharray="6 24"
-                    className="animate-[dash_1.5s_linear_infinite]"
-                  />
-                </svg>
+                {/* Horizontal Flow Map (Desktop & Tablet) */}
+                <div className="hidden md:block relative">
+                  {/* SVG Connecting Flow Lines */}
+                  <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ minHeight: "80px" }}>
+                    <path
+                      d="M 60,35 Q 165,35 165,35"
+                      fill="none"
+                      stroke="#1E293B"
+                      strokeWidth="2"
+                      strokeDasharray="4 4"
+                    />
+                    <path
+                      d="M 60,35 Q 165,35 165,35"
+                      fill="none"
+                      stroke="#22C55E"
+                      strokeWidth="2"
+                      strokeDasharray="6 24"
+                      className="animate-[dash_1.5s_linear_infinite]"
+                    />
+                    <path
+                      d="M 235,35 Q 345,35 345,35"
+                      fill="none"
+                      stroke="#1E293B"
+                      strokeWidth="2"
+                      strokeDasharray="4 4"
+                    />
+                    <path
+                      d="M 235,35 Q 345,35 345,35"
+                      fill="none"
+                      stroke="#0EA5E9"
+                      strokeWidth="2"
+                      strokeDasharray="6 24"
+                      className="animate-[dash_1.5s_linear_infinite]"
+                    />
+                  </svg>
 
-                <div className="grid grid-cols-3 gap-2 relative">
-                  
+                  <div className="grid grid-cols-3 gap-2 relative">
+                    {/* Step 1 */}
+                    <div className="p-3 rounded-xl bg-slate-900/60 border border-[#22C55E]/30 relative z-10 flex flex-col justify-between h-20 hover:border-[#22C55E]/60 transition-colors">
+                      <span className="text-[9px] font-mono text-[#22C55E] font-bold">01 • RESEARCH</span>
+                      <h5 className="text-[11px] font-bold text-white font-sans mt-1 leading-snug">User Interviews</h5>
+                      <p className="text-[8px] text-slate-500 font-mono mt-0.5">Define Painpoints</p>
+                    </div>
+
+                    {/* Step 2 */}
+                    <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-800 relative z-10 flex flex-col justify-between h-20 hover:border-slate-700 transition-colors">
+                      <span className="text-[9px] font-mono text-slate-400">02 • IDEATION</span>
+                      <h5 className="text-[11px] font-bold text-white font-sans mt-1 leading-snug">Wireframing</h5>
+                      <p className="text-[8px] text-slate-500 font-mono mt-0.5">Information Arch</p>
+                    </div>
+
+                    {/* Step 3 */}
+                    <div className="p-3 rounded-xl bg-slate-900/60 border border-[#0EA5E9]/20 relative z-10 flex flex-col justify-between h-20 hover:border-[#0EA5E9]/50 transition-colors">
+                      <span className="text-[9px] font-mono text-[#0EA5E9]">03 • DELIVERY</span>
+                      <h5 className="text-[11px] font-bold text-white font-sans mt-1 leading-snug">Hi-Fi Mockups</h5>
+                      <p className="text-[8px] text-slate-500 font-mono mt-0.5">Figma Prototypes</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Vertical Flow Map (Mobile Layout) */}
+                <div className="block md:hidden space-y-2.5 relative pl-4 border-l border-slate-900 text-left">
                   {/* Step 1 */}
-                  <div className="p-3.5 rounded-xl bg-slate-900/60 border border-[#22C55E]/30 relative z-10 flex flex-col justify-between h-20 hover:border-[#22C55E]/60 transition-colors">
-                    <span className="text-[9px] font-mono text-[#22C55E] font-bold">01 • RESEARCH</span>
-                    <h5 className="text-[11px] font-bold text-white font-sans mt-1 leading-snug">User Interviews</h5>
-                    <p className="text-[8px] text-slate-500 font-mono mt-0.5">Define Painpoints</p>
+                  <div className="relative p-2.5 rounded-xl bg-slate-900/40 border border-[#22C55E]/20">
+                    <span className="absolute -left-[20px] top-4.5 w-2 h-2 rounded-full bg-[#22C55E] ring-4 ring-[#22C55E]/10" />
+                    <span className="text-[8px] font-mono text-[#22C55E] font-bold">01 • RESEARCH</span>
+                    <h5 className="text-[10px] font-bold text-white font-sans mt-0.5">User Interviews</h5>
                   </div>
 
                   {/* Step 2 */}
-                  <div className="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 relative z-10 flex flex-col justify-between h-20 hover:border-slate-700 transition-colors">
-                    <span className="text-[9px] font-mono text-slate-400">02 • IDEATION</span>
-                    <h5 className="text-[11px] font-bold text-white font-sans mt-1 leading-snug">Wireframing</h5>
-                    <p className="text-[8px] text-slate-500 font-mono mt-0.5">Information Arch</p>
+                  <div className="relative p-2.5 rounded-xl bg-slate-900/40 border border-slate-800">
+                    <span className="absolute -left-[20px] top-4.5 w-2 h-2 rounded-full bg-slate-600" />
+                    <span className="text-[8px] font-mono text-slate-400">02 • IDEATION</span>
+                    <h5 className="text-[10px] font-bold text-white font-sans mt-0.5">Wireframing</h5>
                   </div>
 
                   {/* Step 3 */}
-                  <div className="p-3.5 rounded-xl bg-slate-900/60 border border-[#0EA5E9]/20 relative z-10 flex flex-col justify-between h-20 hover:border-[#0EA5E9]/50 transition-colors">
-                    <span className="text-[9px] font-mono text-[#0EA5E9]">03 • DELIVERY</span>
-                    <h5 className="text-[11px] font-bold text-white font-sans mt-1 leading-snug">Hi-Fi Mockups</h5>
-                    <p className="text-[8px] text-slate-500 font-mono mt-0.5">Figma Prototypes</p>
+                  <div className="relative p-2.5 rounded-xl bg-slate-900/40 border border-[#0EA5E9]/20">
+                    <span className="absolute -left-[20px] top-4.5 w-2 h-2 rounded-full bg-[#0EA5E9]" />
+                    <span className="text-[8px] font-mono text-[#0EA5E9]">03 • DELIVERY</span>
+                    <h5 className="text-[10px] font-bold text-white font-sans mt-0.5">Hi-Fi Mockups</h5>
                   </div>
-
                 </div>
+
               </div>
 
               {/* UX Quality Indicator */}

@@ -111,11 +111,11 @@ export default function ProjectsSection() {
 
               <div className="space-y-6 relative z-10">
                 {/* Header: Icon & Category */}
-                <div className="flex items-center justify-between">
-                  <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                  <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center shrink-0">
                     {project.icon}
                   </div>
-                  <span className="text-[10px] font-mono font-bold tracking-wider text-[#22C55E] uppercase bg-[#22C55E]/10 px-2.5 py-1 rounded-full">
+                  <span className="text-[10px] font-mono font-bold tracking-wider text-[#22C55E] uppercase bg-[#22C55E]/10 px-2.5 py-1 rounded-full self-start sm:self-center">
                     {project.category}
                   </span>
                 </div>
