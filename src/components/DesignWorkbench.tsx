@@ -186,7 +186,7 @@ export default function DesignWorkbench() {
             >
               <Trophy size={11} className="text-[#22C55E]" />
               <span className="text-[9px] font-mono text-white font-bold uppercase tracking-widest">
-                Best UI/UX Designer in the World
+                Best UI/UX Designer
               </span>
               
               {/* Figma Selection Handles */}
