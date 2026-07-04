@@ -30,7 +30,7 @@ export default function TimelineSection() {
       description: "Designed responsive HTML/CSS email marketing templates and optimized delivery settings for ISPs to ensure inbox rates.",
     },
     {
-      year: "2022 - 2025",
+      year: "2022 - 2025 ",
       title: "Bachelor of Technology (IT)",
       subtitle: "Rathinam Technical Campus, Coimbatore",
       type: "education",
