@@ -65,7 +65,7 @@ export default function DesignWorkbench() {
           <span className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]" />
           <span className="w-2.5 h-2.5 rounded-full bg-[#27C93F]" />
           <span className="text-[10px] font-mono text-slate-500 ml-3 tracking-wider uppercase border-l border-slate-800 pl-3">
-            Figma_WIP: No1_Designer
+            Figma_WIP: Best_Designer
           </span>
         </div>
 
@@ -109,7 +109,7 @@ export default function DesignWorkbench() {
               {/* Parent Artboard */}
               <div className="flex items-center gap-1.5 text-slate-400 font-medium py-1">
                 <Layout size={10} className="text-purple-400" />
-                <span className="truncate">Desktop - Rank #1</span>
+                <span className="truncate">Desktop - Best Designer</span>
               </div>
 
               {/* Layer 1 */}
@@ -186,7 +186,7 @@ export default function DesignWorkbench() {
             >
               <Trophy size={11} className="text-[#22C55E]" />
               <span className="text-[9px] font-mono text-white font-bold uppercase tracking-widest">
-                No. 1 UI/UX Designer in the World
+                Best UI/UX Designer in the World
               </span>
               
               {/* Figma Selection Handles */}
@@ -211,7 +211,7 @@ export default function DesignWorkbench() {
                 RAHUL M K
               </h2>
               <p className="text-[9px] font-mono text-[#22C55E] uppercase tracking-widest mt-1">
-                World Rank #1 • UI/UX Specialist
+                Best UI/UX Designer • UI/UX Specialist
               </p>
 
               {/* Figma Selection Handles */}
