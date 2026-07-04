@@ -45,7 +45,7 @@ export default function ProjectsSection() {
     },
     {
       title: "Email Marketing Engine & HTML Templates",
-      category: "Email Marketing / Dotnix Technology",
+      category: "Email Marketing Specialist / Dotnix Technology",
       description: "Built responsive HTML email campaigns and configured deliverability pathways for enterprise product outreach.",
       details: [
         "Designed and coded tables-based responsive HTML/CSS email templates compatible with all major ISPs.",

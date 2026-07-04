@@ -24,7 +24,7 @@ export default function TimelineSection() {
   const timelineData: TimelineItem[] = [
     {
       year: "2025",
-      title: "Email Marketing",
+      title: "Email Marketing Specialist",
       subtitle: "Dotnix Technology",
       type: "experience",
       description: "Designed responsive HTML/CSS email marketing templates and optimized delivery settings for ISPs to ensure inbox rates.",
@@ -94,7 +94,7 @@ export default function TimelineSection() {
 
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          
+
           {/* Left Column: Education & Experience Timeline */}
           <div className="lg:col-span-7 space-y-12">
             <div className="space-y-4">
