@@ -49,7 +49,7 @@ export default function Footer() {
               Email
             </a>
             <a
-              href="/Rahul_M%20K_resume_250626.pdf"
+              href="/Rahul_M%20K_%20UI_UX.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs text-slate-400 hover:text-[#22C55E] transition-colors"

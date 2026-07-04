@@ -100,7 +100,7 @@ export default function HeroSection() {
             </button>
 
             <a
-              href="/Rahul_M%20K_resume_250626.pdf"
+              href="/Rahul_M%20K_%20UI_UX.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-2 glass border border-slate-700 hover:border-[#22C55E]/40 text-white px-8 py-3.5 rounded-full font-sans font-bold text-sm uppercase tracking-wider transition-all duration-300 hover:scale-105"
